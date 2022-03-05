@@ -1,0 +1,18 @@
+<%= form_with(url: "/flights", method: "get", local: true) do %>
+<% end %>
+
+<h2>Select your departure airport</h2>
+<%= select_tag(:departure_airport, options_for_select(@departure_airport_options) )%>
+
+<h2>Select you destination</h2>
+<%= select_tag(:arrival_airport, options_for_select(@arrival_airport_options) )%>
+
+<h2>Number of passengers</h2>
+<%= select_tag(:number_of_passengers, options_for_select(1..4) )%>
+
+
+
+
+    
+</select>
+

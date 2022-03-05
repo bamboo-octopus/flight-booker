@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 
 # Airport.create(code: "JIA", city_state: "Jacksonville, FL" )
 # Airport.create(code: "MIA" , city_state: "Miami, FL")
@@ -22,31 +16,22 @@ airports = [
     ["MIA", "Miami, FL"],
     ["ORD", "Chicago, IL"],
     ["DEN", "Denver, CO"],
-    ["JFK", "New York, New York"],
-    ["IAD", "Washington, D.C."],
-    ["SFO", "San Fransisco, CA"],
-    ["AUS", "Austin, TX"],
-    ["OMA", "Omaha, NE"],
-    ["SEA", "Seattle, WA"]
+    ["JFK", "New York, NY"]    
+
 ]
 
 flights = [
-    [140, 133],
-    [134, 139],
-    [132, 131],
-    [137, 138],
-    [136, 140],
-    [135, 139],
-    [138, 131],
-    [134, 137],
-    [131, 140],
-    [136, 133]
+    [141, 142, "2022-04-20 02:34:00", 5400],
+    [141, 143, "2022-05-15 12:34:00", 10800],
+    [141, 144, "2022-07-11 06:42:00", 12000],
+    [141, 145, "2022-08-02 08:11:00", 6000]
 ]
 
     # airports.each do |code, city_state|
     #     Airport.create(code: code, city_state: city_state)
     # end
 
-    flights.each do |arrival_airport_id, departure_airport_id|
-        Flight.create(arrival_airport_id: arrival_airport_id, departure_airport_id: departure_airport_id)
+    flights.each do |departure_airport_id, arrival_airport_id, flight_departure_time, flight_duration|
+        Flight.create(departure_airport_id: departure_airport_id, arrival_airport_id: arrival_airport_id,
+        flight_departure_time: flight_departure_time, flight_duration: flight_duration )
     end
