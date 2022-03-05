@@ -30,6 +30,23 @@ airports = [
     ["SEA", "Seattle, WA"]
 ]
 
-    airports.each do |code, city_state|
-        Airport.create(code: code, city_state: city_state)
+flights = [
+    [140, 133],
+    [134, 139],
+    [132, 131],
+    [137, 138],
+    [136, 140],
+    [135, 139],
+    [138, 131],
+    [134, 137],
+    [131, 140],
+    [136, 133]
+]
+
+    # airports.each do |code, city_state|
+    #     Airport.create(code: code, city_state: city_state)
+    # end
+
+    flights.each do |arrival_airport_id, departure_airport_id|
+        Flight.create(arrival_airport_id: arrival_airport_id, departure_airport_id: departure_airport_id)
     end
