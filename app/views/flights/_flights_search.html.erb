@@ -1,0 +1,42 @@
+<div class="search-div">
+    
+    <h2><u>Search Flights</u></h2>
+    <br>
+
+    <%= form_with(url: "/flights", method: "get", local: true) do |f| %>
+        <div class="flight-div">
+            <div class="fly-from-div">
+                <h3> <%= f.label "Flying From" %> </h3> 
+                <%= f.select(:departure_airport, options_for_select(@departure_airport_options), {}, class: "drop-down-box" ) %>
+            </div>
+
+            <div class="flying-to-div">
+                <h3> <%= f.label "Flying To" %> </h3>                
+                <%= f.select(:arrival_airport, options_for_select(@arrival_airport_options), {} , class: "drop-down-box" ) %>
+            </div>
+
+        </div>
+
+        <br>
+
+
+
+        <h3> <%= f.label "Date of Departure" %> </h3>
+        <%= f.select(:departure_date, options_for_select(@date_options), {} , class: "drop-down-box" ) %>
+
+        <br><br>
+
+        <h3> <%= f.label "Number of Passengers" %> </h3>
+        <%= f.select(:number_of_passengers, options_for_select(1..4), {}, class: "drop-down-box" ) %>
+
+        <br><br>
+
+        <%= f.submit "Search Flights", class: "search-btn" %>
+
+
+
+    <% end %>
+
+    <br>
+
+</div>
