@@ -23,9 +23,63 @@
 
 .mid-div {
     width: 48%;
+    position: relative;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+   
+    
+}
+
+.search-div {
+    border: solid 1px lightgray;
+    padding: .5rem;
+    border-radius: 6px;
+
+    width: 42%;
+    margin: auto;
+    position: relative;
     text-align: center;
+  
+    
 }
 
 .right-div {
     width: 24%;
+}
+
+.drop-down-box {
+    background-color: white;
+
+    padding: .2rem .5rem;
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    border: solid 1px rgb(104, 104, 218);
+}
+
+.drop-down-box:hover {
+    background-color: lightgray;
+    border-radius: 6px;
+    border: solid 1px lightgray;
+    color: rgb(104, 104, 218);
+}
+
+.search-btn {
+    padding: .2rem .5rem;
+    font-weight: bold;
+    background-color: white;
+    transition: all 0.3s ease 0s;
+    border: solid 1px rgb(104, 104, 218);
+    border-radius: 6px;
+  
+
+}
+
+.search-btn:hover {
+    border: solid 1px lightgray;
+    background-color: lightgray;
+    color: rgb(104, 104, 218);
+
 }
