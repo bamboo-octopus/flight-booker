@@ -17,8 +17,15 @@
 
 </div>
 
+<% if @available_flights != nil %>
+    <% @available_flights.each do |f| %>
+        <%= f.arrival_airport.code %>
+        <%= f.departure_airport.code %>
+    <% end %>
 
+<% end %>
 
+<%= @date.class %>
 
 
 
