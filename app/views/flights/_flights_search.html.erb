@@ -22,7 +22,7 @@
 
 
         <h3> <%= f.label "Date of Departure" %> </h3>
-        <%= f.select(:departure_date, options_for_select(@date_options), {} , class: "drop-down-box" ) %>
+        <%= f.select(:departure_date, options_for_select(@date_options, :flight_departure_time_formatted), {} , class: "drop-down-box" ) %>
 
         <br><br>
 
