@@ -33,8 +33,14 @@
     
 }
 
+.flight-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .search-div {
-    border: solid 1px lightgray;
+    border: solid 1px rgb(104, 104, 218);
     padding: .5rem;
     border-radius: 6px;
 
