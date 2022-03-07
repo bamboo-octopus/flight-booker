@@ -1,0 +1,12 @@
+
+
+<div class="returned-flights-div">
+    <h2><u>Flights Available</u></h2>
+    <% @available_flights.each do |f| %>
+        <%= f.departure_airport.code %>
+        <%= f.arrival_airport.code %>
+        <%= f.departure_time %>
+        <br>
+    <% end %>
+</div>
+    

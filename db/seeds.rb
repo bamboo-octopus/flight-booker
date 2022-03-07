@@ -21,17 +21,22 @@ airports = [
 ]
 
 flights = [
-    [141, 142, "2022-04-20 02:34:00", 5400],
-    [141, 143, "2022-05-15 12:34:00", 10800],
-    [141, 144, "2022-07-11 06:42:00", 12000],
-    [141, 145, "2022-08-02 08:11:00", 6000]
+    [141, 142, "2022-04-20 12:00:00", 5400, "4:00 pm"],
+    [141, 142, "2022-04-20 12:00:00", 5400, "2:34 pm"],
+    [141, 143, "2022-05-15 12:00:00", 10800, "1:00 pm"],
+    [141, 143, "2022-05-15 12:00:00", 10800, "8:00 am"],
+    [141, 144, "2022-07-11 12:00:00", 12000, "8:00 pm"],
+    [141, 144, "2022-07-11 12:00:00", 12000, "12:00 pm"],
+    [141, 145, "2022-08-02 12:00:00", 6000, "3:00 am"],    
+    [141, 145, "2022-08-02 12:00:00", 6000, "6:00 pm"]
+
 ]
 
     # airports.each do |code, city_state|
     #     Airport.create(code: code, city_state: city_state)
     # end
 
-    flights.each do |departure_airport_id, arrival_airport_id, flight_departure_time, flight_duration|
+    flights.each do |departure_airport_id, arrival_airport_id, flight_departure_date, flight_duration, departure_time|
         Flight.create(departure_airport_id: departure_airport_id, arrival_airport_id: arrival_airport_id,
-        flight_departure_time: flight_departure_time, flight_duration: flight_duration )
+        flight_departure_date: flight_departure_date, flight_duration: flight_duration, departure_time: departure_time )
     end

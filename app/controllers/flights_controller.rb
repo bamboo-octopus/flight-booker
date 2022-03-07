@@ -6,16 +6,20 @@ class FlightsController < ApplicationController
 
     @departure_airport_options = Airport.all.map {|a| [a.code, a.id] }
     @arrival_airport_options = Airport.all.map {|a| [a.code, a.id] }
-    @date_options = Flight.all.map {|d| [d.flight_departure_time_formatted, d.flight_departure_time_formatted] }.uniq 
 
-    if params.has_key?(:departure_date)
-      @date = params[:departure_date]
-    end
+    
+    @all_dates = Flight.pluck(:flight_departure_date)
+    @formatted_dates = @all_dates.map {|d| [d.strftime("%-m/%d/%Y"), d]}
 
+   
+    @date_options = Flight.all.map {|d| [d.flight_departure_date.strftime("%-m/%d/%Y"), d.flight_departure_date] }.uniq
+
+       
     if params.has_key?(:departure_airport)
-      @available_flights = Flight.where(departure_airport_id: params[:departure_airport]).where(arrival_airport_id: params[:arrival_airport]).where(flight_departure_time: params[:departure_date])
+      @available_flights = Flight.where(departure_airport_id: params[:departure_airport]).where(arrival_airport_id: params[:arrival_airport]).where(flight_departure_date: params[:departure_date])
     end
 
+    
   end
 
   private 

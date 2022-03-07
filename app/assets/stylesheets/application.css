@@ -89,3 +89,16 @@
     color: rgb(104, 104, 218);
 
 }
+
+.returned-flights-div {
+    border: solid 1px rgb(104, 104, 218);
+    padding: .5rem;
+    border-radius: 6px;
+
+    width: 42%;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    margin-top: 2%;
+
+}
