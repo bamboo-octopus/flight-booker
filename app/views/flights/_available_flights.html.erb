@@ -1,12 +1,38 @@
-
-
 <div class="returned-flights-div">
+<%= form_with(url: "bookings/new", method: "get", local: true) do |f| %>
+
+
     <h2><u>Flights Available</u></h2>
-    <% @available_flights.each do |f| %>
-        <%= f.departure_airport.code %>
-        <%= f.arrival_airport.code %>
-        <%= f.departure_time %>
-        <br>
-    <% end %>
-</div>
+    <br>
+
+        <% @available_flights.each do |flight| %>           
+            
+                <span>
+                    <%= radio_button_tag(:flight, flight.id, { checked: true })%>           
+                    <%= flight.departure_airport.code %> =>  <%= flight.arrival_airport.code %>
+                    <br>
+                    <%= flight.flight_departure_date.strftime("%-m/%d/%Y") %>
+                    <%= flight.departure_time%>
+                    <br>
+                </span>
+               
+              
+
+                
+            
+        <br>      
+        <% end %>   
+        <% f.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>        
+        <%= f.submit "Choose Flight", class: "search-btn"%>   
+        
+        
+       
+        
+   
     
+</div>
+
+
+   
+
+<% end %>
