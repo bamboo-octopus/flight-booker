@@ -16,7 +16,8 @@ class FlightsController < ApplicationController
 
        
     if params.has_key?(:departure_airport)
-      @available_flights = Flight.where(departure_airport_id: params[:departure_airport]).where(arrival_airport_id: params[:arrival_airport]).where(flight_departure_date: params[:departure_date])
+      #@available_flights = Flight.where(departure_airport_id: params[:departure_airport]).where(arrival_airport_id: params[:arrival_airport]).where(flight_departure_date: params[:departure_date])
+      @available_flights = Flight.where(departure_airport_id: params[:departure_airport], arrival_airport_id: params[:arrival_airport], flight_departure_date: params[:departure_date])
     end
 
     if params.has_key?(:number_of_passengers)

@@ -6,6 +6,19 @@
 .header-logo-div {
     padding: .2rem .5rem;
     background-color: rgb(104, 104, 218);
+    
+}
+
+.header-logo {
+    text-decoration: none;
+    color: black;
+
+    transition: all 0.4s ease 0s;
+}
+
+.header-logo:hover {
+    color: white;
+    
 }
 
 .main-div {
@@ -74,7 +87,7 @@
 
 .search-btn {
     padding: .2rem .5rem;
-    font-weight: bold;
+    
     background-color: white;
     transition: all 0.3s ease 0s;
     border: solid 1px rgb(104, 104, 218);
@@ -101,4 +114,8 @@
     text-align: center;
     margin-top: 2%;
 
+}
+
+.no-flights-message {
+    color: red;
 }
